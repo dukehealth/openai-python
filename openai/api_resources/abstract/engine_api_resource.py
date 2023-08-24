@@ -135,6 +135,7 @@ class EngineAPIResource(APIResource):
         organization=None,
         **params,
     ):
+        print('create')
         (
             deployment_id,
             engine,
@@ -149,7 +150,7 @@ class EngineAPIResource(APIResource):
         ) = cls.__prepare_create_request(
             api_key, api_base, api_type, api_version, organization, **params
         )
-
+        print('url',url)
         response, _, api_key = requestor.request(
             "post",
             url,
